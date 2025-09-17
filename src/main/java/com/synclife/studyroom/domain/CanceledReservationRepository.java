@@ -1,5 +1,6 @@
 package com.synclife.studyroom.domain;
 
-public class CanceledReservationRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
 
+public interface CanceledReservationRepository extends JpaRepository<CanceledReservation, Long> {
 }

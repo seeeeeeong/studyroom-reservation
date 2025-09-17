@@ -1,5 +1,6 @@
 package com.synclife.studyroom.domain;
 
-public class RoomRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
 
+public interface RoomRepository extends JpaRepository<Room, Long> {
 }
