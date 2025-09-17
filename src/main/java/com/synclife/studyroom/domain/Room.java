@@ -17,17 +17,17 @@ public class Room {
     private String location;
 
     @Column(nullable = false)
-    private Integer capacity;
+    private int capacity;
 
     protected Room() {}
 
-    public Room(String name, String location, Integer capacity) {
+    public Room(String name, String location, int capacity) {
         this.name = name;
         this.location = location;
         this.capacity = capacity;
     }
 
-    public static Room create(String name, String location, Integer capacity) {
+    public static Room create(String name, String location, int capacity) {
         return new Room(name, location, capacity);
     }
 
@@ -43,7 +43,7 @@ public class Room {
         return location;
     }
 
-    public Integer getCapacity() {
+    public int getCapacity() {
         return capacity;
     }
 }
