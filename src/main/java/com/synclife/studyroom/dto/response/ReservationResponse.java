@@ -10,16 +10,14 @@ public record ReservationResponse(
     Long roomId,
     String roomName,
     String userId,
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
     LocalDateTime startAt,
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
     LocalDateTime endAt
 ) {
-    public static ReservationResponse from(Reservation reservation) {
+    public static ReservationResponse from(Reservation reservation, String roomName) {
         return new ReservationResponse(
             reservation.getId(),
-            reservation.getRoom().getId(),
-            reservation.getRoom().getName(),
+            reservation.getRoomId(),
+            roomName,
             reservation.getUserId(),
             reservation.getStartAt(),
             reservation.getEndAt()

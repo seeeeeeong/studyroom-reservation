@@ -2,9 +2,11 @@ package com.synclife.studyroom.controller;
 
 import com.synclife.studyroom.dto.request.CreateRoomRequest;
 import com.synclife.studyroom.dto.response.RoomResponse;
+import com.synclife.studyroom.dto.response.RoomAvailabilityResponse;
 import com.synclife.studyroom.service.RoomService;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -22,7 +24,7 @@ public class RoomController {
     }
 
     @GetMapping("/rooms")
-    public List<RoomResponse> getAllRooms() {
-        return roomService.getAllRooms();
+    public List<RoomAvailabilityResponse> getRoomAvailability(@RequestParam LocalDate date) {
+        return roomService.getRoomAvailability(date);
     }
 }

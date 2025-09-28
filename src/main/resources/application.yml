@@ -4,8 +4,8 @@ spring:
   
   datasource:
     url: jdbc:postgresql://localhost:5432/studyroom
-    username: studyroom_user
-    password: studyroom_pass
+    username: lee
+    password: lee
     driver-class-name: org.postgresql.Driver
     hikari:
       maximum-pool-size: 20

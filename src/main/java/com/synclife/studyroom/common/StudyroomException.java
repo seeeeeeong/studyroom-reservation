@@ -1,7 +1,6 @@
 package com.synclife.studyroom.common;
 
 public class StudyroomException extends RuntimeException {
-
     private final ErrorCode errorCode;
 
     public StudyroomException(ErrorCode errorCode) {
@@ -9,8 +8,8 @@ public class StudyroomException extends RuntimeException {
         this.errorCode = errorCode;
     }
 
-    public StudyroomException(ErrorCode errorCode, String message) {
-        super(message);
+    public StudyroomException(ErrorCode errorCode, Throwable cause) {
+        super(errorCode.getMessage(), cause);
         this.errorCode = errorCode;
     }
 
